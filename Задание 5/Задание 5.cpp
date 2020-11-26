@@ -1,21 +1,41 @@
-﻿// Задание 1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Задание 5.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 using namespace std;
 #include <iostream>
+#include <cmath>
 
 int main()
 {
 	setlocale(0, "");
-	int a;
-	cout << "Введите целое число: ";
+	double a, b, c, x, x1, x2;
+	cout << "Введите a: ";
 	cin >> a;
-	for (int i = 1; i <= a; i++)
+	cout << "Введите b: ";
+	cin >> b;
+	cout << "Введите c: ";
+	cin >> c;
+
+	double D = b * b - 4 * a * c;
+	cout << "D = " << D << endl;
+
+	if (D == 0)
 	{
-		if (a % i == 0)
-			cout << i << endl;
+		x = -b / (2 * a);
+		cout << "х =  " << x << endl;
 	}
-	return 0;
+	else if (D > 0)
+	{
+		x1 = (-b + sqrt(D)) / (2 * a);
+		x2 = (-b - sqrt(D)) / (2 * a);
+
+		cout << "х1 =  " << x1 << endl;
+		cout << "х2 =  " << x2 << endl;
+	}
+	else
+	{
+		cout << "Нет корней" << endl;
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
